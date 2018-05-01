@@ -4,7 +4,7 @@
 
 	# Store each line of the given file into an array
 	# The index variable is the sequential record number as the file is read (NR)
-	strings [NR] = $0
+	lines [NR] = $0
 }
 # Once all the lines are read we enter the END block
 END {
@@ -17,10 +17,10 @@ END {
 
 	for (i = 0; i <= NR; i++) # Loop through each line of the file
 	   {
-		split (strings[i], str)  # Split the words in each line and make an array
-		for (string in str)      # Traverse the array of words for every line
+		split (lines[i], strings)  # Split the words in each line and make an array
+		for (string in strings)      # Traverse the array of words for every line
 		{
-	 	if (tolower(str[string]) ~ tolower(stri))  # use tolower to search case insensitively
+	 	if (tolower(strings[string]) ~ tolower(stri))  # use tolower to search case insensitively
 		 {
 			count++;
 	 	 }
