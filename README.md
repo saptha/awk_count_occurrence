@@ -14,7 +14,7 @@ test
 
 
 ## Example (Interactive mode):
-`$ awk -f Search_String.awk input_file.txt`    
+`$ awk -f Search_String.awk`    
   Enter the string to search     
   sample     
   sample occurred 7 times    
